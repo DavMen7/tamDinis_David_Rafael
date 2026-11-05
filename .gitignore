@@ -12,6 +12,13 @@ android/build/
 android/app/build/
 *.iml
 
+android-prototipo/.gradle/
+android-prototipo/.idea/
+android-prototipo/.kotlin/
+android-prototipo/local.properties
+android-prototipo/build/
+android-prototipo/app/build/
+
 # Python
 __pycache__/
 .venv/
