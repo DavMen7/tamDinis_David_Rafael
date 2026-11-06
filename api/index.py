@@ -1,6 +1,6 @@
 """SmartAccess - API REST (Flask + PostgreSQL).
 
-No Vercel todas as rotas sao encaminhadas para este ficheiro (ver vercel.json).
+No Vercel o ponto de entrada e app.py (na raiz), que importa esta app.
 Localmente: flask --app api/index run --port 8000 --debug   (le o .env automaticamente)
 
 Autenticacao:
@@ -74,7 +74,7 @@ def tratar_erro_api(erro: ErroApi):
 
 @app.errorhandler(404)
 def nao_encontrado(_):
-    return jsonify(detail="Rota inexistente"), 404
+    return jsonify(detail="Rota inexistente", rota=request.path), 404
 
 
 @app.errorhandler(405)
