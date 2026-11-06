@@ -26,8 +26,8 @@ from flask import Flask, g, jsonify, request
 from flask.json.provider import DefaultJSONProvider
 from psycopg.rows import dict_row
 
-DATABASE_URL = os.environ.get("DATABASE_URL") or os.environ.get("POSTGRES_URL")
-JWT_SECRET = os.environ.get("JWT_SECRET", "")
+DATABASE_URL = (os.environ.get("DATABASE_URL") or os.environ.get("POSTGRES_URL") or "").strip()
+JWT_SECRET = os.environ.get("JWT_SECRET", "").strip()
 FUSO = ZoneInfo(os.environ.get("FUSO_HORARIO", "Europe/Lisbon"))
 
 DURACAO_TOKEN = timedelta(hours=12)
